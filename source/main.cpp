@@ -3,7 +3,6 @@
 injector ptr;
 
 injector::injector() {
-    if(!std::string(GetCommandLineA()).contains("-auto")) return;
-    if(!std::filesystem::exists("samp.dll")) return;
+    if(!std::string(GetCommandLineA()).contains("-auto") || !std::filesystem::exists("samp.dll")) return;
     LoadLibraryA("samp.dll");
 };
